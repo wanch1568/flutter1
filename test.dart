@@ -6,7 +6,6 @@ import '/provider/riverpod_provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class MyTableCalendar extends ConsumerWidget{
-    bool isChanged=false;
     DateTime _focusedDay = DateTime.now();
     DateTime? _selectedDay;
     int num=0;
@@ -29,8 +28,8 @@ class MyTableCalendar extends ConsumerWidget{
                 return isSameDay(_selectedDay, day);
             },
             onDaySelected: (selectedDay, focusedDay) {
-                _selectedDay=selectedDay;
-                _focusedDay=focusedDay;
+               // _selectedDay=selectedDay;
+               // _focusedDay=focusedDay;
                 print(selectedDay);
                 ref.read(selectedDate.notifier).state=selectedDay;
                 print(focusedDay);
